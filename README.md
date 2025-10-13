@@ -1,9 +1,18 @@
 import streamlit as st
 import pickle 
 import pandas as pd
+import pickle
+import os
+
+current_dir = os.path.dirname(__file__)
+model_path = os.path.join(current_dir, "model (1).pkl")
+
+with open(model_path, "rb") as f:
+    model = pickle.load(f)
+
 
 st.title("welcome to my LogesticRegression")
-model=pickle.load(open("model (1).pkl","rb"))
+
 
 
 Age=st.sidebar.number_input("enter the age ")
